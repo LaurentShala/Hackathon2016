@@ -271,7 +271,7 @@
                     </navigationItem>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="610" y="1171"/>
+            <point key="canvasLocation" x="1006" y="1180"/>
         </scene>
         <!--Item-->
         <scene sceneID="5km-aA-L7J">
@@ -347,7 +347,7 @@
                     </connections>
                 </navigationController>
             </objects>
-            <point key="canvasLocation" x="-178" y="1180"/>
+            <point key="canvasLocation" x="217" y="1180"/>
         </scene>
     </scenes>
 </document>
