@@ -26,11 +26,18 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             if Error == nil {
                 print("SIGNED IN")
                 self.hideActivityIndicator()
+                let alertController = UIAlertController(title: "Success", message: "You are now logged in!", preferredStyle: UIAlertControllerStyle.alert)
+                let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default)
+                alertController.addAction(okAction)
+                self.present(alertController, animated: true, completion: nil)
                 sender.isEnabled = true
-//                self.performSegue(withIdentifier: "testID", sender: self)
             }else {
                 print(Error!)
                 self.hideActivityIndicator()
+                let alertController = UIAlertController(title: "Login Error", message: "Invalid Login Credentials", preferredStyle: UIAlertControllerStyle.alert)
+                let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default)
+                alertController.addAction(okAction)
+                self.present(alertController, animated: true, completion: nil)
                 sender.isEnabled = true
             }
         })
@@ -47,6 +54,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         self.passwordTextField.delegate = self
     }
+    
+    
 
     
     func showActivityIndicator() {
