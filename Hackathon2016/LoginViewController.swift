@@ -27,6 +27,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 print("SIGNED IN")
                 self.hideActivityIndicator()
                 sender.isEnabled = true
+//                self.performSegue(withIdentifier: "testID", sender: self)
             }else {
                 print(Error!)
                 self.hideActivityIndicator()
@@ -45,7 +46,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.passwordTextField.delegate = self
-//        emailTextField.foc
     }
 
     
@@ -57,7 +57,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         self.loadingView.clipsToBounds = true
         self.loadingView.layer.cornerRadius = 10
             
-        self.spinner = NVActivityIndicatorView(frame: self.view.frame, type: NVActivityIndicatorType.pacman, color: UIColor.white, padding: nil)
+        self.spinner = NVActivityIndicatorView(frame: self.view.frame, type: NVActivityIndicatorType.ballClipRotatePulse, color: UIColor.white, padding: nil)
         self.spinner?.frame = CGRect(x: 0.0, y: 0.0, width: 80.0, height: 80.0)
         self.spinner?.center = CGPoint(x:self.loadingView.bounds.size.width / 2, y:self.loadingView.bounds.size.height / 2)
         

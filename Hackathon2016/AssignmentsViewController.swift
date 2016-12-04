@@ -7,29 +7,32 @@
 //
 
 import UIKit
+import Firebase
 
 class AssignmentsViewController: UITableViewController {
 
+    @IBAction func signOutBarButton(_ sender: UIBarButtonItem) {
+        let actionSheetController: UIAlertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        let cancelActionButton: UIAlertAction = UIAlertAction(title: "Cancel", style: .cancel) { action -> Void in
+            print("Cancel")
+        }
+        
+        let deleteActionButton: UIAlertAction = UIAlertAction(title: "Sign Out", style: .destructive) { action -> Void in
+            print("Sign Out")            
+        }
+        
+        actionSheetController.addAction(cancelActionButton)
+        actionSheetController.addAction(deleteActionButton)
+        self.present(actionSheetController, animated: true, completion: nil)
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
